@@ -1,0 +1,12 @@
+{
+    "name": "luke/api",
+    "require-dev": {
+        "symfony/var-dumper": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LH\\Api\\": "src/"
+        }
+    },
+    "require": {}
+}
