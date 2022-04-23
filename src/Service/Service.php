@@ -6,10 +6,6 @@ namespace LH\Api\Service;
  */
 abstract class Service
 {
-    public function __construct()
-    {
-    }
-
     /**
      * Get the underlying service.
      */
