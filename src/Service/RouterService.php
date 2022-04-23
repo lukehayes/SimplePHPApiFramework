@@ -15,7 +15,6 @@ class RouterService extends Service
 
     public function get() : Object
     {
-        dump($this->router);
         return $this->router;
     }
 }
