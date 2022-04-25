@@ -29,7 +29,7 @@ class Container
      */
     public function addService(string $name, Service $service)
     {
-        $this->service[$name] = $service;
+        $this->services[$name] = $service;
     }
 
     /**
