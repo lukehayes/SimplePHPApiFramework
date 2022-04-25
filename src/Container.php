@@ -37,11 +37,17 @@ class Container
      *
      * @param string $name The name of the service to retrieve from the container.
      *
-     * @return void
+     * @return mixed
      */
-    public function getService(string $name) : Service
+    public function getService(string $name) : mixed
     {
-        return $this->service[$name];
+        if(array_key_exists($name, $this->services))
+        {
+            return $this->services[$name];
+        }else
+        {
+            return false;
+        }
     }
 
     public function getServices() : array
