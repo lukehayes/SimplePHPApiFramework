@@ -22,5 +22,12 @@ class App
     {
         return $this->container;
     }
+
+
+    public function __call($name, $args)
+    {
+        $service = $this->container->getService($name);
+        return $service->get();
+    }
 }
 
