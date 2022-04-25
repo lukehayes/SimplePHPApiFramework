@@ -1,8 +1,13 @@
 <?php
 require "vendor/autoload.php";
 
-use LH\Api\Router;
+use LH\Api\App;
 
-$r = new Router;
+$app = new App();
 
-$r->run();
+// Load servies into container.
+$services = require __DIR__ . "/src/Services.php";
+$services($app);
+
+
+
