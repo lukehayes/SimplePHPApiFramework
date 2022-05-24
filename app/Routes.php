@@ -1,7 +1,6 @@
 <?php
 
 use LH\Api\App;
-
 use LH\Api\Route;
 
 /**
@@ -9,12 +8,18 @@ use LH\Api\Route;
  */
 return function(App $app)
 {
-    $route = new Route("/", function()
+    $route1 = new Route("/", function()
+    {
+        dump("Route Object Called");
+    });
+
+    $route2 = new Route("/hello", function()
     {
         dump("Route Object Called");
     });
 
     $router = $app->router();
-    $router->addRoute($route);
+    $router->addRoute($route1);
+    $router->addRoute($route2);
 };
 
