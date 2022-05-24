@@ -9,5 +9,7 @@ $app = new App();
 $services = require __DIR__ . "/app/Services.php";
 $services($app);
 
+$app->router()->run();
+
 
 
