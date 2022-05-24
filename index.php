@@ -6,7 +6,7 @@ use LH\Api\App;
 $app = new App();
 
 // Load servies into container.
-$services = require __DIR__ . "/src/Services.php";
+$services = require __DIR__ . "/app/Services.php";
 $services($app);
 
 
