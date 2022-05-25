@@ -37,15 +37,26 @@ class Router
      */
    private function dispatchRoute() : void
     {
-        switch($this->request_path)
+        // TODO Implmenent properly.
+        dump(array_key_exists($this->request_path, $this->routes));
+
+        if(array_key_exists($this->request_path, $this->routes))
         {
-            case "/":
-                echo "Home";
-                break;
-            default:
-                echo "Page Not Found";
-                break;
+            $route = $this->routes[$this->request_path];
+            dump($route);
+            dump($route->callback());
         }
+
+
+        //switch($this->request_path)
+        //{
+            //case "/":
+                //echo "Home";
+                //break;
+            //default:
+                //echo "Page Not Found";
+                //break;
+        //}
     }
 
     /**
