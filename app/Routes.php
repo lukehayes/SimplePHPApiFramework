@@ -19,7 +19,7 @@ return function(App $app)
     });
 
     $router = $app->router();
-    $router->addRoute($route1);
-    $router->addRoute($route2);
+    $router->addRoute("/", $route1);
+    $router->addRoute("/hello",$route2);
 };
 
