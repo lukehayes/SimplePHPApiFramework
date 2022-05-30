@@ -7,13 +7,13 @@ use LH\Api\Router;
 class RouterService extends Service
 {
     /**
-     * @var $router */
-    public ?Router $router = NULL;
+     * @var $service */
+    public ?Router $service = NULL;
 
     public function __construct()
     {
-        $this->router = new Router();
-        return $this->router;
+        $this->service = new Router();
+        return $this->service;
     }
 
     /**
@@ -23,7 +23,7 @@ class RouterService extends Service
      */
     public function get() : Object
     {
-        return $this->router;
+        return $this->service;
     }
 }
 
