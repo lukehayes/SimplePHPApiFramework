@@ -18,8 +18,7 @@ return function(App $app)
         dump("Route Object Called");
     });
 
-    $router = $app->router();
-    $router->addRoute("/", $route1);
-    $router->addRoute("/hello",$route2);
+    $app->router->addRoute("/", $route1);
+    $app->router->addRoute("/hello",$route2);
 };
 
