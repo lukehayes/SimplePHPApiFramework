@@ -23,8 +23,10 @@ class App
         return $this->container;
     }
 
-
-    public function __call($name, $args)
+    /**
+     * Magic method is iplemented to make the 'api' a little cleaner.
+     */
+    public function __get($name)
     {
         $service = $this->container->getService($name);
         return $service->get();
