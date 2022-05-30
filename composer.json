@@ -8,5 +8,7 @@
             "LH\\Api\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "twig/twig": "^3.4"
+    }
 }
