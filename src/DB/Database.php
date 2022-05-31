@@ -8,11 +8,11 @@ use LH\Api\DB\Connection;
  */
 class Database
 {
-    public Connection $connection;
+    public PDOConnection $connection;
 
     public function __construct()
     {
-        $db = new Connection();
+        $db = new PDOConnection();
         $this->connection = $db->getConnection();
         //dump($this->connection);
     }

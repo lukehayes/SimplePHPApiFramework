@@ -6,7 +6,7 @@ use PDO;
 /**
  * Simple PDO Connection to an Sqlite database.
  */
-class Connection
+class PDOConnection
 {
     private ?PDO $conn = NULL;
 
