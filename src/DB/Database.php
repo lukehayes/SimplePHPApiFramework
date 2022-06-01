@@ -12,8 +12,15 @@ class Database
 
     public function __construct()
     {
-        $db = new PDOConnection();
-        $this->connection = $db->getConnection();
-        //dump($this->connection);
+        $this->connection = new PDOConnection();
+    }
+
+    /**
+     * PDOConnection instance getter.
+     * @return PDO
+     */
+    public function getConnection() : PDO
+    {
+        return $this->connection->getConnection();
     }
 }
