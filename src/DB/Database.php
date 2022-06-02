@@ -29,4 +29,19 @@ class Database
         return $this->connection->getConnection();
     }
 
+
+    /**
+     * Create a test table and fill it with data. Will be removed.
+     */
+    public function buildTestDB()
+    {
+        //$this()->query("create table test(id integer)");
+
+        for($i = 0; $i <= 10; $i++)
+        {
+            $r = rand(100,1000);
+            $this()->query("insert into test(id) values($r)");
+        }
+    }
+
 }
