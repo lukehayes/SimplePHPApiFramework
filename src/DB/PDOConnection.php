@@ -13,6 +13,7 @@ class PDOConnection
     public function __construct()
     {
         $this->conn = new PDO("sqlite:db");
+        $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); 
     }
 
     /**
