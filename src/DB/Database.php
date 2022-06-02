@@ -23,4 +23,10 @@ class Database
     {
         return $this->connection->getConnection();
     }
+
+    public function __invoke()
+    {
+        return $this->connection->getConnection();
+    }
+
 }
