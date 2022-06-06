@@ -169,4 +169,6 @@ tags
 # Persistent undo
 [._]*.un~
 
+db
+
 # End of https://www.toptal.com/developers/gitignore/api/composer,vim,linux,phpunit,phpstorm
