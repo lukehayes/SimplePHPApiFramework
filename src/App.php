@@ -24,6 +24,14 @@ class App
     }
 
     /**
+     * Start the application.
+     */
+    public function run() : void
+    {
+        $this->router->run();
+    }
+
+    /**
      * Magic method is iplemented to make the 'api' a little cleaner.
      */
     public function __get($name)

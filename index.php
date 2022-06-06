@@ -13,7 +13,6 @@ $services($app);
 $routes = require __DIR__ . "/app/Routes.php";
 $routes($app);
 
-$app->router->run();
 
 
 
