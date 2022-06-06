@@ -2,6 +2,7 @@
 namespace LH\Api\DB;
 
 use LH\Api\DB\Connection;
+use PDO;
 
 /**
  * Layer to interact with the database.
@@ -24,11 +25,15 @@ class Database
         return $this->connection->getConnection();
     }
 
-    public function __invoke()
+    /**
+     * Call the Database instance like a functor().
+     *
+     * @return PDO
+     */
+    public function __invoke() : PDO
     {
         return $this->connection->getConnection();
     }
-
 
     /**
      * Create a test table and fill it with data. Will be removed.
