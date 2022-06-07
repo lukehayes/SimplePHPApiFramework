@@ -32,7 +32,8 @@ class App
     }
 
     /**
-     * Magic method is iplemented to make the 'api' a little cleaner.
+     * Magic method is implemented to allow acess to the
+     * underlying services inside the container.
      */
     public function __get($name)
     {
