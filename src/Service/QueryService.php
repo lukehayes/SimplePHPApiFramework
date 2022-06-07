@@ -1,0 +1,26 @@
+<?php
+namespace LH\Api\Service;
+
+use LH\Api\Service\Service;
+use LH\Api\DB\Query;
+
+class QueryService extends Service
+{
+    private $service = NULL;
+
+    public function __construct()
+    {
+        $this->service = new Query();
+    }
+
+    /**
+     * Get the underlying service.
+     *
+     * @return Object
+     */
+    public function get() : Object
+    {
+        return $this->service;
+    }
+}
+
