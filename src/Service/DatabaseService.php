@@ -11,7 +11,6 @@ class DatabaseService extends Service
     public function __construct()
     {
         $this->service = (new Database())->getConnection();
-        dump($this);
     }
 
     /**
