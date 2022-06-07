@@ -2,13 +2,14 @@
 namespace LH\Api;
 
 use LH\Api\Service\Service;
-
-// Todo Add PSR-7 compliance...
+use LH\Api\Service\ServiceNotFoundException;
+use Psr\Container\ContainerInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 /**
  * A very simple/basic service container
  */
-class Container
+class Container implements ContainerInterface
 {
     /**
      * @var array $sevices
@@ -53,6 +54,48 @@ class Container
     public function getServices() : array
     {
         return $this->services;
+    }
+
+    /**
+     * ---------------------------------------------------------------------
+     * PSR CONTAINER
+     * ---------------------------------------------------------------------
+     */
+    /**
+     * Finds an entry of the container by its identifier and returns it.
+     *
+     * @param string $id Identifier of the entry to look for.
+     *
+     * @throws NotFoundExceptionInterface  No entry was found for **this** identifier.
+     * @throws ContainerExceptionInterface Error while retrieving the entry.
+     *
+     * @return mixed Entry.
+     */
+    public function get(string $id)
+    {
+        if(array_key_exists($id, $this->services))
+        {
+            return $this->services[$id];
+        }else
+        {
+            throw new ServiceNotFoundException("Service: [$id] could not be found.");
+        }
+    }
+
+    /**
+     * Returns true if the container can return an entry for the given identifier.
+     * Returns false otherwise.
+     *
+     * `has($id)` returning true does not mean that `get($id)` will not throw an exception.
+     * It does however mean that `get($id)` will not throw a `NotFoundExceptionInterface`.
+     *
+     * @param string $id Identifier of the entry to look for.
+     *
+     * @return bool
+     */
+    public function has(string $id): bool
+    {
+        // TODO Implement
     }
 
 }
