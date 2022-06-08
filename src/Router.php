@@ -38,13 +38,13 @@ class Router
    private function dispatchRoute() : void
     {
         // TODO Implmenent properly.
-        dump(array_key_exists($this->request_path, $this->routes));
+        //dump(array_key_exists($this->request_path, $this->routes));
 
         if(array_key_exists($this->request_path, $this->routes))
         {
             $route = $this->routes[$this->request_path];
-            dump($route);
-            dump($route->callback());
+            // TODO Horrible solution, but works for now.
+            $route->callback->call($route);
         }
 
 
