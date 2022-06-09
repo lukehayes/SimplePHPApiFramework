@@ -1,6 +1,8 @@
 <?php
 namespace LH\Api;
 
+use LH\Api\Service\ServiceNotFoundException;
+
 class Router
 {
     private $request_path = NULL;
@@ -45,7 +47,7 @@ class Router
             ($route->callback)($app);
         }else
         {
-            throw new \Exception("Route could not be found");
+            throw new ServiceNotFoundException("Route could not be found");
         }
     }
 
