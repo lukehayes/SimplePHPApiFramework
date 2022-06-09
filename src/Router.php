@@ -35,35 +35,25 @@ class Router
     /**
      * Try and find an availabe route to display.
      */
-   private function dispatchRoute() : void
+   private function dispatchRoute(App $app) : void
     {
-        // TODO Implmenent properly.
-        //dump(array_key_exists($this->request_path, $this->routes));
 
         if(array_key_exists($this->request_path, $this->routes))
         {
+            // TODO  Better solution than before but needs much work!
             $route = $this->routes[$this->request_path];
-            // TODO Horrible solution, but works for now.
-            $route->callback->call($route);
+            ($route->callback)($app);
+        }else
+        {
+            throw new \Exception("Route could not be found");
         }
-
-
-        //switch($this->request_path)
-        //{
-            //case "/":
-                //echo "Home";
-                //break;
-            //default:
-                //echo "Page Not Found";
-                //break;
-        //}
     }
 
     /**
      * Start the router.
      */
-    public function run()
+    public function run(App $app)
     {
-        $this->dispatchRoute();
+        $this->dispatchRoute($app);
     }
 }

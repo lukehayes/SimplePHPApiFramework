@@ -8,14 +8,15 @@ use LH\Api\Route;
  */
 return function(App $app)
 {
-    $route1 = new Route("/", function()
+    $route1 = new Route("/", function($app)
     {
-        dump("Route Object Called");
+        echo $app->twig->render('index.php', []);
+
     });
 
     $route2 = new Route("/hello", function()
     {
-        dump("Route Object Called");
+        dump("Route Object Called from /hello path");
     });
 
     $app->router->addRoute("/", $route1);

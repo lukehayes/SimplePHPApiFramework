@@ -28,7 +28,9 @@ class App
      */
     public function run() : void
     {
-        $this->router->run();
+        // Pass an instance of $this so the router has access to it
+        // and it can be accessed in the callbacks.
+        $this->router->run($this);
     }
 
     /**
