@@ -12,7 +12,8 @@ class TwigService extends Service
     public function __construct()
     {
         $loader = new FilesystemLoader('templates');
-        $this->service = new Environment($loader, []);
+        $this->service = new Environment($loader, ['debug' => 'true']);
+        $this->service->addExtension(new \Twig\Extension\DebugExtension);
     }
 
     /**
