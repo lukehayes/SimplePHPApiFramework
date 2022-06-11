@@ -5,6 +5,7 @@ use LH\Api\Service\RouterService;
 use LH\Api\Service\TwigService;
 use LH\Api\Service\DatabaseService;
 use LH\Api\Service\QueryService;
+use LH\Api\Service\RequestService;;
 
 /**
  * Add all of the services to the container here.
@@ -16,6 +17,12 @@ return function(App $app)
      */
     $app->getContainer()
         ->addService('router', new RouterService);
+
+    /**
+     * Request Instance
+     */
+    $app->getContainer()
+        ->addService('request', new RequestService);
 
     /**
      * Twig templates.
