@@ -24,4 +24,24 @@ class Request
     {
         return $this->method;
     }
+
+    /**
+     * Is the request a GET?
+     *
+     * @return bool.
+     **/
+    public function isGet() : bool
+    {
+       return $this->method == "GET" ?? false;
+    }
+
+    /**
+     * Is the request a POST?
+     *
+     * @return bool.
+     **/
+    public function isPost() : bool
+    {
+       return $this->method == "POST" ?? false;
+    }
 }
