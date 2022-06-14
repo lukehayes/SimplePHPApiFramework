@@ -7,6 +7,9 @@
 </head>
 <body>
 
+{% block content %}
+    <h4>Main Content</h4>
+{% endblock %}
 
     
 </body>
