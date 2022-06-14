@@ -14,5 +14,5 @@ $routes = require __DIR__ . "/app/Routes.php";
 $routes($app);
 
 
-
+$app->run();
 
