@@ -10,8 +10,7 @@ return function(App $app)
 {
     $route1 = new Route("/", function($app)
     {
-        echo $app->twig->render('index.php', []);
-
+        echo $app->twig->render('base.php', []);
     });
 
     $route2 = new Route("/hello", function()
@@ -19,7 +18,15 @@ return function(App $app)
         dump("Route Object Called from /hello path");
     });
 
+    $posts = new Route("/posts", function($app)
+    {
+        $q = $app->query;
+        echo $app->twig->render('posts/index.php', ['data' => $q->selectAll('posts') ]);
+
+    });
+
     $app->router->addRoute("/", $route1);
     $app->router->addRoute("/hello",$route2);
+    $app->router->addRoute("/posts",$posts);
 };
 
