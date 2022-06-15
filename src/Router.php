@@ -39,11 +39,12 @@ class Router
      */
    private function dispatchRoute(App $app) : void
     {
+        $path = trim($this->request_path, "\/");
 
-        if(array_key_exists($this->request_path, $this->routes))
+        if(array_key_exists($path, $this->routes))
         {
             // TODO  Better solution than before but needs much work!
-            $route = $this->routes[$this->request_path];
+            $route = $this->routes[$path];
             ($route->callback)($app);
         }else
         {

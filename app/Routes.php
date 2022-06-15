@@ -27,6 +27,6 @@ return function(App $app)
 
     $app->router->addRoute("/", $route1);
     $app->router->addRoute("/hello",$route2);
-    $app->router->addRoute("/posts",$posts);
+    $app->router->addRoute("posts",$posts);
 };
 
