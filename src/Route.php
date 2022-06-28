@@ -8,7 +8,11 @@ class Route
 {
     /**
      * @var string    Path the route leads. */
-    private $path = NULL;
+    private $path    = NULL;
+
+    /**
+     * @var string    The method the route applies to. */
+    private $method  = NULL;
 
     /**
      * @var Closure */
@@ -34,5 +38,15 @@ class Route
     public function getPath() : string
     {
         return $this->path;
+    }
+
+    public function setMethod(string $method) : void
+    {
+        $this->method = $method;
+    }
+
+    public function getMethod() : string
+    {
+        return $this->method;
     }
 }
