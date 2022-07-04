@@ -5,7 +5,8 @@ use LH\Api\Service\RouterService;
 use LH\Api\Service\TwigService;
 use LH\Api\Service\DatabaseService;
 use LH\Api\Service\QueryService;
-use LH\Api\Service\RequestService;;
+use LH\Api\Service\RequestService;
+use LH\Api\Service\HelperService;
 
 /**
  * Add all of the services to the container here.
@@ -41,6 +42,12 @@ return function(App $app)
      */
     $app->getContainer()
         ->addService('query', new QueryService);
+
+    /**
+     * Helper Server
+     */
+    $app->getContainer()
+        ->addService('helpers', new HelperService);
 };
 
 
