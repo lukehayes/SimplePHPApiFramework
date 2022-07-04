@@ -10,7 +10,7 @@ return function(App $app)
 {
     $home = new Route("/", function($app)
     {
-        echo $app->twig->render('base.php', []);
+        echo $app->twig->render('main/base.php', []);
     });
 
     $posts = new Route("/posts", function($app)
