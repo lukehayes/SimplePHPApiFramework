@@ -29,9 +29,9 @@ class Router
      *
      * @return array    List of all the currently defined routes.
      */
-    public function addRoute(String $name, Route $route) : void
+    public function addRoute(Route $route) : void
     {
-        $this->routes[$name] = $route;
+        $this->routes[$route->getPath()] = $route;
     }
 
     /**
