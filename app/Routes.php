@@ -22,11 +22,16 @@ return function(App $app)
     {
         $q = $app->query;
         echo $app->twig->render('posts/index.php', ['data' => $q->selectAll('posts') ]);
-
     });
 
-    $app->router->addRoute("/", $route1);
-    $app->router->addRoute("/hello",$route2);
-    $app->router->addRoute("posts",$posts);
+    $loginForm = new Route("/login", function($app)
+    {
+        $q = $app->query;
+        echo $app->twig->render('form.php', []);
+    });
+
+    $app->router->addRoute($route1);
+    $app->router->addRoute($posts);
+    $app->router->addRoute($loginForm);
 };
 
