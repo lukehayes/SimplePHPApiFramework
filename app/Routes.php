@@ -8,14 +8,9 @@ use LH\Api\Route;
  */
 return function(App $app)
 {
-    $route1 = new Route("/", function($app)
+    $home = new Route("/", function($app)
     {
         echo $app->twig->render('base.php', []);
-    });
-
-    $route2 = new Route("/hello", function()
-    {
-        dump("Route Object Called from /hello path");
     });
 
     $posts = new Route("/posts", function($app)
@@ -30,7 +25,7 @@ return function(App $app)
         echo $app->twig->render('form.php', []);
     });
 
-    $app->router->addRoute($route1);
+    $app->router->addRoute($home);
     $app->router->addRoute($posts);
     $app->router->addRoute($loginForm);
 };
