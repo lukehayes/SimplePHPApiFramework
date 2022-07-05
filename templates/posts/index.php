@@ -1,4 +1,4 @@
-{% extends "base.php" %}
+{% extends "main/base.php" %}
 
 {% block content %}
 <table>

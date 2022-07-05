@@ -10,6 +10,7 @@ return function(App $app)
 {
     $home = new Route("/", function($app)
     {
+        dump($app->helpers->APP_DIR);
         echo $app->twig->render('main/base.php', []);
     });
 
