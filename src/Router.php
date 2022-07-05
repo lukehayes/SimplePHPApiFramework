@@ -48,7 +48,7 @@ class Router
             ($route->callback)($app);
         }else
         {
-            throw new ServiceNotFoundException("Route could not be found");
+            throw new ServiceNotFoundException("Route for path: $this->request_path could not be found");
         }
     }
 
