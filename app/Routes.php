@@ -10,7 +10,6 @@ return function(App $app)
 {
     $home = new Route("/", function($app)
     {
-        dump($app->helpers->APP_DIR);
         echo $app->twig->render('main/base.php', []);
     });
 
@@ -23,7 +22,7 @@ return function(App $app)
     $loginForm = new Route("/login", function($app)
     {
         $q = $app->query;
-        echo $app->twig->render('form.php', []);
+        echo $app->twig->render('login/form.php', []);
     });
 
     $app->router->addRoute($home);
