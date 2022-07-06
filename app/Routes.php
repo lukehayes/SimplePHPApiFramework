@@ -12,18 +12,22 @@ return function(App $app)
     {
         echo $app->twig->render('main/base.php', []);
     });
+    $home->setMethod("GET");
+
 
     $posts = new Route("/posts", function($app)
     {
         $q = $app->query;
         echo $app->twig->render('posts/index.php', ['data' => $q->selectAll('posts') ]);
     });
+    $posts->setMethod("GET");
 
     $loginForm = new Route("/login", function($app)
     {
         $q = $app->query;
         echo $app->twig->render('login/form.php', []);
     });
+    $loginForm->setMethod("GET");
 
     $app->router->addRoute($home);
     $app->router->addRoute($posts);
