@@ -39,7 +39,9 @@ class Router
      */
    private function dispatchRoute(App $app) : void
     {
-        $path = trim($this->request_path, "\/");
+        // TODO Will implement this properly later
+        //$path = trim($this->request_path, "\/");
+        $path = $this->request_path;
 
         if(array_key_exists($path, $this->routes))
         {
