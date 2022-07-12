@@ -29,8 +29,17 @@ return function(App $app)
     });
     $loginForm->setMethod("GET");
 
+    $loginFormSubmit = new Route("/login", function($app)
+    {
+		// TODO Create some kind of authentication system.
+
+		dump("Authentication Needed");
+    });
+    $loginFormSubmit->setMethod("POST");
+
     $app->router->addRoute($home);
     $app->router->addRoute($posts);
-    $app->router->addRoute($loginForm);
+	$app->router->addRoute($loginForm);
+    $app->router->addRoute($loginFormSubmit);
 };
 
