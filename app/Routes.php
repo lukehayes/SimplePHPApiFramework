@@ -32,8 +32,17 @@ return function(App $app)
     $loginFormSubmit = new Route("/login", function($app)
     {
 		// TODO Create some kind of authentication system.
+		$user_logged_in = false;
 
-		dump("Authentication Needed");
+		if($user_logged_in)
+		{
+        	echo $app->twig->render('main/base.php', []);
+		}else
+		{
+			dump("Authentication Needed");
+        	echo $app->twig->render('login/form.php', []);
+		}
+
     });
     $loginFormSubmit->setMethod("POST");
 
